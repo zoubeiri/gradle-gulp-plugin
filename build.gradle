@@ -7,7 +7,7 @@ plugins {
     id 'com.jfrog.bintray' version "0.6"
 }
 
-group = 'com.moowork.gradle'
+group = 'com.palantir'
 
 ext {
     bintrayUser = System.env.'BINTRAY_USER'
@@ -23,13 +23,17 @@ targetCompatibility = compatibilityVersion
 repositories {
     jcenter()
     mavenCentral()
+
+    maven {
+        url  "http://dl.bintray.com/palantir/releases"
+    }
 }
 
 dependencies {
     testCompile("com.netflix.nebula:nebula-test:2.2.0") {
         exclude group: "org.codehaus.groovy", module: "groovy-all"
     }
-    compile 'com.moowork.gradle:gradle-node-plugin:0.9'
+    compile 'com.palantir:gradle-node-plugin:0.10-FORK'
 }
 
 task sourcesJar( type: Jar ) {
