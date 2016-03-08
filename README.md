@@ -1,3 +1,7 @@
+Deprecated
+==========
+Please see use [main project](https://github.com/srs/gradle-gulp-plugin)
+
 Gradle plugin for Gulp
 =======================
 
